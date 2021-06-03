@@ -120,7 +120,8 @@
 
 			.talentBookIcon,
 			.characterAvatar {
-				filter: drop-shadow(0 0 36px rgb(138, 111, 138));
+				filter: drop-shadow(0 0 0.75rem rgb(170, 136, 170)) hue-rotate(346deg)
+					contrast(115%);
 			}
 
 			.stickyContainer {
@@ -211,12 +212,12 @@
 					return response.json();
 				})
 				.then(data => {
-					console.log(data);
+					// console.log(data);
 
 					// TALENT BOOKS LOOP
 					let i = 1;
 					data.payload.talentBooks.forEach(book => {
-						console.log(`Book ${i}: { ${book.name} }`); // names of the books
+						// console.log(`Book ${i}: { ${book.name} }`); // names of the books
 
 						document.getElementById('talentBooks').innerHTML += `
                     <section class="bookAndCharacterContainer" id="book${i}">
@@ -232,9 +233,9 @@
 
 						// characters loop
 						let j = 1;
-						console.log('= [ Characters ] =');
+						// console.log('= [ Characters ] =');
 						book.characters.forEach(character => {
-							console.log(`    ${character.name} `); // names of the characters
+							// console.log(`    ${character.name} `); // names of the characters
 
 							document.getElementById(
 								`charactersFor${book.name}`
@@ -254,7 +255,7 @@
 					// WEAPON ASC. MATERIALS LOOP
 					let x = 1;
 					data.payload.ascensionMaterials.forEach(material => {
-						console.log(`material ${x}: { ${material.name} }`); // names of the materials
+						// console.log(`material ${x}: { ${material.name} }`); // names of the materials
 
 						document.getElementById('weaponAscMaterials').innerHTML += `
                     <section class="bookAndCharacterContainer" id="material${x}">
@@ -270,9 +271,9 @@
 
 						// Weapons loop
 						let y = 1;
-						console.log('= [ Weapons ] =');
+						// console.log('= [ Weapons ] =');
 						material.weapons.forEach(weapon => {
-							console.log(`    ${weapon.name} `); // names of the weapons
+							// console.log(`    ${weapon.name} `); // names of the weapons
 
 							document.getElementById(
 								`charactersFor${material.name}`
@@ -307,7 +308,7 @@
 						document.getElementById('talentBookTitle').style.textShadow =
 							'4px 4px 12px rgb(138 111 138)';
 
-						console.log('talent book container collapsed');
+						// console.log('talent book container collapsed');
 
 						SmoothVerticalScrolling(
 							document.getElementById('talentBookTitle'),
@@ -323,7 +324,7 @@
 						document.getElementById('talentBookTitle').style.textShadow =
 							'inherit';
 
-						console.log('talent book container expanded');
+						// console.log('talent book container expanded');
 
 						SmoothVerticalScrolling(
 							document.getElementById('talentBookTitle'),
@@ -349,7 +350,7 @@
 						document.getElementById('weaponAscTitle').style.textShadow =
 							'4px 4px 12px rgb(138 111 138)';
 
-						console.log('materials container collapsed');
+						// console.log('materials container collapsed');
 
 						SmoothVerticalScrolling(
 							document.getElementById('weaponAscTitle'),
@@ -366,7 +367,7 @@
 						document.getElementById('weaponAscTitle').style.textShadow =
 							'inherit';
 
-						console.log('materials container expanded');
+						// console.log('materials container expanded');
 
 						SmoothVerticalScrolling(
 							document.getElementById('weaponAscTitle'),
